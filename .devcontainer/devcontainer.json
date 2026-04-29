@@ -1,0 +1,36 @@
+{
+    "name": "Django-Tutorial",
+    "image": "mcr.microsoft.com/devcontainers/python:1-3.12-bookworm",
+
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "python.defaultInterpreterPath": ".venv/bin/python",
+                "python.terminal.activateEnvironment": true,
+                "[python]": {
+                    "editor.defaultFormatter": "charliermarsh.ruff",
+                    "editor.formatOnSave": true,
+                    "editor.codeActionsOnSave": {
+                        "source.fixAll.ruff": "explicit",
+                        "source.organizeImports.ruff": "explicit"
+                    }
+                },
+                "workbench.editorAssociations": {
+                    "*.sqlite3": "sqlite-intelliview.editor"
+                }
+            },
+            "extensions": [
+                "ms-python.python",
+                "ms-python.vscode-pylance",
+                "charliermarsh.ruff",
+                "tamasfe.even-better-toml",
+                "bowlerr.sqlite-intelliview-vscode",
+                "aaron-bond.better-comments"
+            ]
+        }
+    },
+
+    "postCreateCommand": "curl -LsSf https://astral.sh/uv/install.sh | sh && export PATH=$PATH:$HOME/.local/bin && uv venv --prompt 'django-intro' && uv sync",
+
+    "remoteUser": "vscode"
+}

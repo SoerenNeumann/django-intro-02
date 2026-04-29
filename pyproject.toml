@@ -1,0 +1,42 @@
+[project]
+name = "django-tutorial-modul"
+version = "0.1.0"
+description = "Django-Setup für ein Tutorial"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    #"django>=5.2,<6.1",  # Nutzt die stabile LTS oder die aktuelle 6.0
+]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.3.0",       # Damit 'ruff' auch im Terminal verfügbar ist
+]
+
+[tool.uv]
+managed = true
+package = false          # Wichtig für Django-Apps, die keine installierbaren Pakete sind
+
+[tool.ruff]
+line-length = 88
+target-version = "py312"
+
+# Diese Liste hält den Linter auf den eigenen Code fokussiert
+exclude = [
+    ".git",
+    ".venv",
+    ".ruff_cache",
+    "__pycache__",
+    "build",
+    "dist",
+    "node_modules", # Falls du später mal JavaScript/Tailwind dazu nimmst
+]
+
+
+[tool.ruff.lint]
+select = ["E", "F", "I"] # Aktiviert Basis-Fehlerprüfung und Import-Sortierung
+
+[tool.ruff.format]
+quote-style = "double"
+docstring-code-format = true
+line-ending = "lf"

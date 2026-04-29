@@ -1,0 +1,64 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# --- uv & Umgebungen ---
+# Wir ignorieren den virtuellen Ordner, da 'uv sync' ihn überall neu baut
+.venv/
+env/
+venv/
+ENV/
+
+# --- Django ---
+# WICHTIG: Die SQLite-Datenbank wird ignoriert, damit  
+# lokale Testdaten nicht versehentlich committet werden.
+db.sqlite3
+db.sqlite3-journal
+
+# Lokale Einstellungen (Geheimnisse, API-Keys)
+local_settings.py
+.env
+.secrets
+
+# Medien-Uploads von Usern
+media/
+
+# Gesammelte statische Dateien (werden via collectstatic erzeugt)
+staticfiles/
+static/collected/
+
+# --- VS Code & IDEs ---
+.vscode/*.log
+.vscode/pythonAnalysisCache/
+
+# --- Betriebssysteme ---
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+desktop.ini
+
+# --- Testen & Qualität ---
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
